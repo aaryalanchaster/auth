@@ -34,10 +34,7 @@ exports.createUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   try {
-    // const { err } = validateUserLogin(req.body)
-    // if (err) return res.status(400).json({ message: err.message }) // Validate the users input
 
-    // find the email of the user
     const user = await User.findOne({ email: req.body.email }).select(
       '+password'
     )
