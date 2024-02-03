@@ -3,7 +3,7 @@ const { connectDB } = require("./config/database");
 const dotenv = require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT;
-const API_BASE_URL = process.env.API_BASE_URL || 'https://auth-odugkyz0h-aaryalanchaster.vercel.app';
+// const API_BASE_URL = process.env.API_BASE_URL || 'https://auth-odugkyz0h-aaryalanchaster.vercel.app';
 
 
 // Instantiating the mongodb database
@@ -33,8 +33,8 @@ server.use(cookieParser()); // Used in setting the cookies parser
 server.use("/api/v1", user);
 
 // Creating the server
-// server.listen(PORT, () => console.log("Server is running on port " + PORT));
+server.listen(PORT, () => console.log("Server is running on port " + PORT));
 
-server.listen(() =>
-  console.log("Server is running. API Base URL: " + API_BASE_URL)
-);
+// server.listen(() =>
+//   console.log("Server is running. API Base URL: " + API_BASE_URL)
+// );
